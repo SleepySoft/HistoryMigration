@@ -132,7 +132,7 @@ QT_QPA_PLATFORM=offscreen python -m unittest discover -s tests -v
 2. 事件模型、`.his` 读写、PyQt6 时间轴、事件编辑器和基础过滤器已有实现。
 3. Agent API、Web 前端、权限和协同编辑仍是预留阶段。
 
-旧版程序的完整行为规格（含缺陷清单与迁移决策建议）见 [`docs/history_legacy_spec/`](docs/history_legacy_spec/README.md)。
+旧版程序的完整行为规格（含缺陷清单与迁移决策建议）见 [`docs/history_legacy_spec/`](docs/history_legacy_spec/README.md)；新版的行为规格（WHY/WHAT/HOW，操作逻辑继承旧版+优化、底层按新设计）见 `UniversalHistory/docs/spec/`。
 
 ## 已知边界
 
