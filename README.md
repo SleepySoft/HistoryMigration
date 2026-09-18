@@ -9,6 +9,7 @@ HistoryMigration 是把旧版 `History` 桌面时间轴迁移到 `UniversalHisto
 | `History/` | 旧版 PyQt5 时间轴项目，保留 `.his` 解析器、编辑器和查看器，是迁移的参考实现。 |
 | `UniversalHistory/` | 目标项目，基于 PyQt6、`JDNTimestamp` 和 `Workspace` 重新实现时间轴。 |
 | `docs/` | 本仓库的补充文档，例如当前迁移状态。 |
+| `docs/history_legacy_spec/` | 旧版 `History` 的 WHY / WHAT / HOW 行为规格（按目录组织），是迁移验收的行为对照清单。 |
 | `migration_analysis.md` | 从 `History` 到 `UniversalHistory` 的代码分析、目标映射与阶段方案。 |
 | `migration_design.txt` | 原始迁移目标和约束记录。 |
 
@@ -130,6 +131,8 @@ QT_QPA_PLATFORM=offscreen python -m unittest discover -s tests -v
 1. `History` 的数据格式、时间解析和布局经验已经迁移到 `UniversalHistory`。
 2. 事件模型、`.his` 读写、PyQt6 时间轴、事件编辑器和基础过滤器已有实现。
 3. Agent API、Web 前端、权限和协同编辑仍是预留阶段。
+
+旧版程序的完整行为规格（含缺陷清单与迁移决策建议）见 [`docs/history_legacy_spec/`](docs/history_legacy_spec/README.md)。
 
 ## 已知边界
 
