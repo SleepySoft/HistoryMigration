@@ -61,6 +61,13 @@ QT_QPA_PLATFORM=offscreen python -m unittest discover -s tests -v
 
 结果：61 个测试全部通过。
 
+## 最新设计裁决（记录于 UniversalHistory/docs/spec/）
+
+1. **Track 是正式概念层级**：Thread > Track > Item，Track 的轨数公式、分配顺序、末轨兜底属布局行为规格（`spec/how/07-layout.md` §0）。
+2. **Index 是简化记录而非独立概念**：仅保留正文之外的摘要 + 指针，为减小传输尺寸而设计，由 Event 现场派生（`spec/how/04-models.md` §2）；旧版 .index 文件管线废弃。
+3. **事件归属与文件管理重新设计**（不沿用旧版混乱）：事件恰好归属一个 source、归属可见、写回原 source、新建默认归属当前 Thread 绑定 source（`spec/how/14-event-ownership.md`）。
+4. **以时间轴为主界面**：新建/编辑/删除从轴上下文发起，编辑器降级为轴的从属单事件对话框（`spec/how/15-timeline-centric-editing.md`）。
+
 ## 下一步建议
 
 1. 建立可脱离 sibling 仓库导入的解析器边界，评估将旧 `.his` 解析逻辑迁移进 `UniversalHistory` 或独立包。
