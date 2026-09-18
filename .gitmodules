@@ -1,0 +1,8 @@
+[submodule "History"]
+	path = History
+	url = https://github.com/SleepySoft/History.git
+	branch = master
+[submodule "UniversalHistory"]
+	path = UniversalHistory
+	url = https://github.com/SleepySoft/UniversalHistory.git
+	branch = main
